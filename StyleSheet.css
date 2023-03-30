@@ -20,9 +20,10 @@ h1 {
 
 nav {
   width: 100%;
-  height: 100px;
+  height: 100%;
+  min-height: 100px;
   background-color: gray;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 ul {
@@ -30,17 +31,25 @@ ul {
   list-style: none;
   display: flex;
   justify-content: space-around;
-  align-items: stretch;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
 }
 
 li {
   display: flex;
   align-items: center;
   font-size: 40px;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+li:nth-child(1) {
+  display: none;
 }
 
 li:hover {
-  color: rgb(149, 144, 101)
+  color: rgb(255, 255, 255)
 }
 
 img {
@@ -55,9 +64,54 @@ img {
     color: white;
   }
 
+  li {
+    display: none;
+  }
+
+  nav.open > ul > li{
+    flex-direction: column;
+    display: grid;
+  }
+
+  nav ul > #menu {
+    margin-bottom: -60px;
+  }
+
+  nav.open ul > #menu {
+    margin-bottom: 0px;
+  }
+
+  nav.open > ul {
+    flex-direction: column;
+    justify-content: center;
+    height: 300px;
+  }
+
+  li:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+  }
+  
+  li:nth-child(1) i {
+    font-size: 75px;
+    text-align: center;
+    width: 75px; /* adjust size as needed */
+    height: 75px;
+  }
+
+  li:nth-child(1):hover > .fa-bars {
+    color: rgb(0, 0, 0)
+  }
+
+  li:hover {
+    color: rgb(0, 0, 0)
+  }
+
   .container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4, 500px);
   }
-
 }

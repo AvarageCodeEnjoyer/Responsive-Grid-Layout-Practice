@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/cd385a218c.js" crossorigin="anonymous"></script>
   <link href="./StyleSheet.css" rel="StyleSheet">
   <script defer src="./app.js"></script>
   <title>Responsive</title>
 </head>
 <body>
-  <nav>
+  <nav id="list">
     <ul>
+      <li id="menu"><i class="fa-solid fa-bars fa-2xl"></i></li>
       <li>Home</li>
       <li>Services</li>
       <li>About Us</li>
@@ -23,5 +25,13 @@
     <img src="./Images/Space.jpg" alt="">
     <img src="./Images/Lake.jpg" alt="">
   </div>
+  <script>
+    const menu = document.getElementById('menu')
+    const list = document.getElementById('list')
+
+    menu.addEventListener('click', () => {
+      list.classList.toggle("open")
+    })
+  </script>
 </body>
 </html>
